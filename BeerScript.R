@@ -1,6 +1,7 @@
 library(data.table)
 library(fpc)
 library(cluster)
+library(mclust)
 
 beerdata = data.table::fread("beer_reviews.csv")
 
@@ -25,11 +26,17 @@ top10Taste = head(aggregTaste[ order(-aggregTaste[,2], aggregTaste[,1]), ], 10)
 
 ## Question 2
 
+#sous-échantillon aléatoire de 2000 observations
 randomSample = beerdata[sample(nrow(beerdata), 2000), ]
-beerCluster <- kmeans(randomSample[, c(5,6,9,10)], 5)
 
 d = randomSample[, c(5,6,9,10)]
+
+#k-means avec 5 clusters
+beerCluster <- kmeans(randomSample[, c(5,6,9,10)], 5)
+
 plotcluster(d, beerCluster$cluster)
 with(beerdata, pairs(d, col=c(5,6,9,10)[beerCluster$cluster])) 
 
-
+clPairs(d)
+BIC = mclustBIC(d)
+plot(BIC)
