@@ -1,5 +1,6 @@
 ## Question 2
 
+library(data.table)
 library(cluster)
 library(fpc)
 library(lattice)
