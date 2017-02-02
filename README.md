@@ -6,10 +6,11 @@ This project has for goal to analyze data from a CSV file which contains beers r
 How to run ?
 ====================
 
-You will need R and RStudio on your computer :
+You will need R and RStudio on your computer, and the CSV file to work on :
 
 * [R](https://www.r-project.org/)
 * [RStudio](https://www.rstudio.com/)
+* [Beer Reviews](http://www.aliquote.org/cours/2016_ESME/data/beer_reviews.csv)
 
 
 Open a terminal
