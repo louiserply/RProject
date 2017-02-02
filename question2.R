@@ -48,6 +48,13 @@ plot(1:10,sol.kmeans$crit,type="b",xlab="Nb. de groupes",ylab="Silhouette")
 
 #These two experiments both show that the optimal number of cluster is 2
 
+#dendrogramme
+dendro.d <- dist(d.cr)
+cah.ward <- hclust(dendro.d,method="ward.D2")
+plot(cah.ward)
+
+groupes.cah <- cutree(cah.ward,k=3)
+
 #Stat calcul function
 stat.comp <- function(x,y){
   #number of group
@@ -74,4 +81,5 @@ stat.comp <- function(x,y){
 #we apply stat.comp to the variable d and not to the standardardized normal distribution
 print(sapply(d,stat.comp,y=groupes.cah))
 
-#Groups are mostly dominated by review_aroma
+#Groups are mostly dominated by review_aroma, review_palate and review_taste
+

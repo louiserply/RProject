@@ -113,8 +113,5 @@ print(sapply(d,stat.comp,y=groupes.cah))
 
 #La définition des groupes est avant tout dominée par review_aroma
 
-## question 3
-
-d.matrix<- as(d,"realRatingMatrix")
 
 

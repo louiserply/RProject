@@ -12,6 +12,7 @@ affinity.matrix<- as(affinity.data,"realRatingMatrix")
 # Creation of the model - U(ser) B(ased) C(ollaborative) F(iltering)
 Rec.model<-Recommender(affinity.matrix, method = "UBCF")
 
-recommended.items.1 <- predict(Rec.model, affinity.matrix["1",], n=5)
+recommended.items.1 <- predict(Rec.model, affinity.matrix["1",], n=10)
 
 as(recommended.items.1, "list")
+
