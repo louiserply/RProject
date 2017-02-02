@@ -1,10 +1,8 @@
+## Question 1
+
 library(data.table)
-library(fpc)
-library(cluster)
 
 beerdata = data.table::fread("beer_reviews.csv")
-
-## Question 1
 
 ### Top10 for Aroma
 aggregAroma = aggregate(beerdata$review_aroma, by=list(beerdata$beer_name), FUN=mean)
